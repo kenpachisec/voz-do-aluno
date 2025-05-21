@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Respeito nas Escolas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: rgb(227, 255, 246);
+      overflow: hidden;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      position: relative;
+      z-index: 2;
+    }
+
+    nav a {
+      color: rgb(227, 255, 246);
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 5px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #2c2c2c;
+    }
+
+    section {
+      display: none;
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: #1a1a1a;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(227, 255, 246, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 8px;
+      background-color: #2c2c2c;
+      border: 1px solid #555;
+      border-radius: 5px;
+      color: rgb(227, 255, 246);
+    }
+
+    .form-group input[type="submit"] {
+      background-color: rgb(227, 255, 246);
+      color: #0f0f0f;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #b4fff1;
+    }
+
+    .success-message {
+      margin-top: 15px;
+      color: #86ff9e;
+      font-weight: bold;
+      display: none;
+    }
+
+    /* === Partículas === */
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      animation: float 10s linear infinite;
+      opacity: 0.6;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translateY(-300px) scale(1.2);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-600px) scale(0.8);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Partículas no fundo -->
+  <script>
+    const colors = ['#6930cf', '#8146eb'];
+    for (let i = 0; i < 100; i++) {
+      const particle = document.createElement('div');
+      particle.classList.add('particle');
+      particle.style.left = `${Math.random() * 100}vw`;
+      particle.style.top = `${Math.random() * 100 + 100}vh`;
+      particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+      particle.style.animationDuration = `${5 + Math.random() * 5}s`;
+      particle.style.animationDelay = `${Math.random() * 5}s`;
+      document.body.appendChild(particle);
+    }
+  </script>
+
+  <nav>
+    <a href="#" class="tab-button active" data-tab="home">Home</a>
+    <a href="#" class="tab-button" data-tab="servicos">Serviços</a>
+    <a href="#" class="tab-button" data-tab="contato">Contato</a>
+  </nav>
+
+  <section id="home" class="active">
+    <h1>Sobre o Projeto</h1>
+    <p>
+      Este projeto trata sobre a importância do respeito dentro das escolas, abordando como a indisciplina
+      pode afetar o ambiente escolar e o desenvolvimento dos estudantes. Aqui você encontrará informações e
+      reflexões que incentivam práticas saudáveis de convivência, empatia e colaboração entre alunos,
+      professores e toda a comunidade escolar.
+    </p>
+  </section>
+
+  <section id="servicos">
+    <h1>Serviços Educacionais</h1>
+    <ul>
+      <li>📘 Oficinas de conscientização sobre empatia e respeito.</li>
+      <li>📚 Palestras sobre cidadania e convivência ética.</li>
+      <li>🧠 Apoio psicopedagógico para resolução de conflitos.</li>
+      <li>👨‍🏫 Treinamentos para professores sobre gestão de sala de aula.</li>
+    </ul>
+  </section>
+
+  <section id="contato">
+    <h1>Fale Conosco</h1>
+    <form id="formContato">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Enviar">
+      </div>
+    </form>
+    <div class="success-message" id="successMessage">Mensagem enviada com sucesso!</div>
+  </section>
+
+  <script>
+    // Alternar abas
+    const buttons = document.querySelectorAll('.tab-button');
+    const sections = document.querySelectorAll('section');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        sections.forEach(section => {
+          section.classList.remove('active');
+        });
+
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Validação do formulário
+    const form = document.getElementById('formContato');
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const nome = document.getElementById('nome');
+      const email = document.getElementById('email');
+      const mensagem = document.getElementById('mensagem');
+
+      if (nome.value.trim() === "" || email.value.trim() === "" || mensagem.value.trim() === "") {
+        alert("Por favor, preencha todos os campos.");
+        return;
+      }
+
+      // Simula envio e mostra mensagem
+      document.getElementById('successMessage').style.display = 'block';
+      form.reset();
+
+      setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'none';
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
