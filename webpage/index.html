@@ -63,6 +63,7 @@
       font-weight: bold;
     }
 
+
     .form-group input,
     .form-group textarea {
       width: 100%;
@@ -71,11 +72,12 @@
       border: 1px solid #555;
       border-radius: 5px;
       color: rgb(227, 255, 246);
+      resize: none;
     }
 
     .form-group input[type="submit"] {
-      background-color: rgb(227, 255, 246);
-      color: #0f0f0f;
+      background-color: rgb(61, 61, 61);
+      color: #ffffff;
       font-weight: bold;
       cursor: pointer;
     }
@@ -90,6 +92,8 @@
       font-weight: bold;
       display: none;
     }
+
+    
 
     /* === Partículas === */
     .particle {
@@ -136,6 +140,7 @@
 
   <nav>
     <a href="#" class="tab-button active" data-tab="home">Home</a>
+    <a href="#" class="tab-button" data-tab="report">Relatar</a>
     <a href="#" class="tab-button" data-tab="servicos">Serviços</a>
     <a href="#" class="tab-button" data-tab="contato">Contato</a>
   </nav>
@@ -143,25 +148,74 @@
   <section id="home" class="active">
     <h1>Sobre o Projeto</h1>
     <p>
-      Este projeto trata sobre a importância do respeito dentro das escolas, abordando como a indisciplina
-      pode afetar o ambiente escolar e o desenvolvimento dos estudantes. Aqui você encontrará informações e
-      reflexões que incentivam práticas saudáveis de convivência, empatia e colaboração entre alunos,
-      professores e toda a comunidade escolar.
+      Desenvolvemos este projeto com o objetivo de proporcionar uma ferramenta para relatar, de forma anônima,
+      casos de bullying, e promover a paz e respeito dentro do ambiente estudantil. É por meio de uma escola harmoniosa
+      que podemos construir uma sociedade melhor.<br><br>
+
+      A princípio, tivemos dificuldades ao lidar com o tema do nosso grupo, tendo em vista que se trata de um
+      tópico um tanto vago, "Respeito", então decidimos restringir a pauta para facilitar o brainstorming, e chegamos
+      à conclusão de que o bullying é uma das maiores representações da falta de respeito em escolas. Para combatermos isso,
+      pensamos em criar uma plataforma para que os alunos pudessem relatar essas situações no local em que passamos
+      a maior parte do nosso tempo, a escola, mantendo o anonimato como a maior prioridade.<br><br>
+      
+      A ideia é que possamos passar os incidentes diretamente para as mãos dos responsávels; direção, coordenação,
+      professores e etc., assim, eles podem tomar as providências sem que os demais alunos tenham ciência de quem fez a denúncia.
+    </p><br><br>
+
+    <h1>Como relatar um caso?</h1>
+    <p>É um processo simples. Você pode usar o nosso serviço principal ao clicar na aba "Relatar", na barra superior do site. 
+      Nessa aba, você terá acesso a um pequeno formulário para informar o ocorrido.
+      Após preencher o formulário, clique em "Enviar" e sua mensagem será enviada diretamente para a direção da escola.
     </p>
+
   </section>
 
   <section id="servicos">
-    <h1>Serviços Educacionais</h1>
+    <h1>Serviços Oferecidos Atualmente</h1>
     <ul>
-      <li>📘 Oficinas de conscientização sobre empatia e respeito.</li>
-      <li>📚 Palestras sobre cidadania e convivência ética.</li>
-      <li>🧠 Apoio psicopedagógico para resolução de conflitos.</li>
-      <li>👨‍🏫 Treinamentos para professores sobre gestão de sala de aula.</li>
+      <li>Palestras de conscientização sobre empatia e respeito.</li>
+      <li>Plataformas para munir alunos que necessitam de relatar casos anonimamente.</li>
     </ul>
   </section>
 
+  <section id="report">
+    <h1>Relate um caso</h1>
+    <p>Aqui você pode enviar um relato à direção sem revelar sua identidade.
+      Preencha o formulário abaixo com os dados solicitados.
+    </p>
+    <form id="formReport">
+
+      <div class="form-group">
+        <label for="ocorrido">Explique o ocorrido, se possível com detalhes:</label>
+        <textarea id="ocorrido" name="ocorrido" rows="8" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="email">(Opcional) E-mail:</label>
+        <input type="email" id="email" name="email" placeholder="Caso precise de um retorno, preencha este campo com um e-mail secundário ou descartável.">
+      </div>
+
+      <div class="form-group">
+        <label for="nome">(Opcional, não recomendado) Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Caso realmente queira se identificar, preencha este campo com seu nome.">
+      </div>
+
+      <div class="form-group">
+        <label for="série">(Opcional, não recomendado) Série/Sala:</label>
+        <input type="text" id="série" name="série" placeholder="Caso realmente queira se identificar, preencha este campo com sua série e sala.">
+      </div>
+
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Enviar">
+      </div>
+    </form>
+    <div class="success-message" id="successMessage">Relatório enviado com sucesso!</div>
+
+  </section>
+
   <section id="contato">
-    <h1>Fale Conosco</h1>
+    <h1>Quer tirar dúvidas? Fale Conosco!</h1>
     <form id="formContato">
       <div class="form-group">
         <label for="nome">Nome:</label>
