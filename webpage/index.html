@@ -9,7 +9,7 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #0f0f0f;
-      color: rgb(227, 255, 246);
+      color: #ffffff;
       overflow: auto;
     }
 
@@ -24,7 +24,7 @@
     }
 
     nav a {
-      color: rgb(227, 255, 246);
+      color: #6930cf;
       text-decoration: none;
       margin: 0 20px;
       font-weight: bold;
@@ -63,7 +63,6 @@
       font-weight: bold;
     }
 
-
     .form-group input,
     .form-group textarea {
       width: 100%;
@@ -71,7 +70,7 @@
       background-color: #2c2c2c;
       border: 1px solid #555;
       border-radius: 5px;
-      color: rgb(227, 255, 246);
+      color: rgb(255, 255, 255);
       resize: none;
     }
 
@@ -82,8 +81,10 @@
       cursor: pointer;
     }
 
+    /* 🔧 Cor roxa ao passar o mouse sobre o botão */
     .form-group input[type="submit"]:hover {
-      background-color: #b4fff1;
+      background-color: #6930cf;
+      color: #ffffff;
     }
 
     .success-message {
@@ -93,9 +94,6 @@
       display: none;
     }
 
-    
-
-    /* === Partículas === */
     .particle {
       position: absolute;
       width: 8px;
@@ -123,9 +121,8 @@
   </style>
 </head>
 <body>
-  <!-- Partículas no fundo -->
   <script>
-    const colors = ['#6930cf', '#8146eb'];
+    const colors = ['#8146eb', '#6930cf'];
     for (let i = 0; i < 100; i++) {
       const particle = document.createElement('div');
       particle.classList.add('particle');
@@ -167,7 +164,6 @@
       Nessa aba, você terá acesso a um pequeno formulário para informar o ocorrido.
       Após preencher o formulário, clique em "Enviar" e sua mensagem será enviada diretamente para a direção da escola.
     </p>
-
   </section>
 
   <section id="servicos">
@@ -184,7 +180,6 @@
       Preencha o formulário abaixo com os dados solicitados.
     </p>
     <form id="formReport">
-
       <div class="form-group">
         <label for="ocorrido">Explique o ocorrido, se possível com detalhes:</label>
         <textarea id="ocorrido" name="ocorrido" rows="8" required></textarea>
@@ -205,13 +200,11 @@
         <input type="text" id="série" name="série" placeholder="Caso realmente queira se identificar, preencha este campo com sua série e sala.">
       </div>
 
-      </div>
       <div class="form-group">
         <input type="submit" value="Enviar">
       </div>
     </form>
     <div class="success-message" id="successMessage">Relatório enviado com sucesso!</div>
-
   </section>
 
   <section id="contato">
@@ -237,7 +230,6 @@
   </section>
 
   <script>
-    // Alternar abas
     const buttons = document.querySelectorAll('.tab-button');
     const sections = document.querySelectorAll('section');
 
@@ -245,20 +237,14 @@
       button.addEventListener('click', () => {
         buttons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
-
-        sections.forEach(section => {
-          section.classList.remove('active');
-        });
-
+        sections.forEach(section => section.classList.remove('active'));
         document.getElementById(button.dataset.tab).classList.add('active');
       });
     });
 
-    // Validação do formulário
     const form = document.getElementById('formContato');
     form.addEventListener('submit', function (event) {
       event.preventDefault();
-
       const nome = document.getElementById('nome');
       const email = document.getElementById('email');
       const mensagem = document.getElementById('mensagem');
@@ -268,7 +254,6 @@
         return;
       }
 
-      // Simula envio e mostra mensagem
       document.getElementById('successMessage').style.display = 'block';
       form.reset();
 
