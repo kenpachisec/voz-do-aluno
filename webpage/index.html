@@ -17,28 +17,41 @@
       display: flex;
       background-color: #1a1a1a;
       justify-content: space-between;
-      padding-left: 50px;
+      padding-left: 15px;
       padding-right: 15px;
     }
 
-    #logo-text {
+    #logo-text{
+        padding-top: 3px;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 19.5px;
         font-weight: 900;
-        color: #ceb2ff;
+        color: #dfa8f8;
+    }
+    
+    #logo{
+      padding-right: 10px;
+      padding-top: 5px;
+      width: 68px;
+      height: 65px;
+    }
+
+    #logo-div{
+      display:flex;
+      padding-left: 18px;
     }
 
     nav {
       background-color: #1a1a1a;
       display: flex;
       justify-content: center;
-      padding: 15px 0;
+      padding: 18px 0;
       position: relative;
       z-index: 2;
     }
 
     nav a {
-      color: #6930cf;
+      color: #982CCB;
       text-decoration: none;
       margin: 0 20px;
       font-weight: bold;
@@ -79,7 +92,7 @@
 
     .form-group input,
     .form-group textarea {
-      width: 100%;
+      width: 98.1%;
       padding: 8px;
       background-color: #2c2c2c;
       border: 1px solid #555;
@@ -96,7 +109,7 @@
     }
     
     .form-group input[type="submit"]:hover {
-      background-color: #6930cf;
+      background-color: #6c3086;
       color: #ffffff;
     }
 
@@ -135,7 +148,10 @@
 </head>
 <body>
   <header>
-    <p id="logo-text">Voz do Aluno</p>
+    <div id="logo-div">
+      <img src="/images/logo-colored.png" alt="Logo do projeto" id="logo">
+      <p id="logo-text">Voz do Aluno</p>
+    </div>
 
     <script>
       const colors = ['#8146eb', '#6930cf'];
@@ -161,29 +177,29 @@
   <section id="home" class="active">
     <h1>Sobre o Projeto</h1>
     <p>
-      Desenvolvemos este projeto com o objetivo de proporcionar uma ferramenta para relatar, de forma anônima,
-      casos de bullying, e promover a paz e respeito dentro do ambiente estudantil. É por meio de uma escola harmoniosa
-      que podemos construir uma sociedade melhor.<br><br>
+      Desenvolvemos este projeto com o objetivo de proporcionar uma ferramenta para denunciar casos de bullying,
+      racismo, homofobia e assim por diante, promovendo a paz e respeito dentro do ambiente estudantil por
+      meio das ações da diretoria. É por meio de uma escola harmoniosa que podemos construir uma sociedade melhor.<br><br>
 
       A princípio, tivemos dificuldades ao lidar com o tema do nosso grupo, tendo em vista que se trata de um
-      tópico um tanto vago, "Respeito", então decidimos restringir a pauta para facilitar o brainstorming, e chegamos
-      à conclusão de que o bullying é uma das maiores representações da falta de respeito em escolas. Para combatermos isso,
-      pensamos em criar uma plataforma para que os alunos pudessem relatar essas situações no local em que passamos
-      a maior parte do nosso tempo, a escola, mantendo o anonimato como a maior prioridade.<br><br>
+      tópico um tanto vago, "Respeito". Então decidimos restringir a pauta para facilitar o brainstorming e, chegamos
+      à conclusão de que ocorrências relacionadas ao racismo, homofobia e bullying são as maiores representações da
+      falta de respeito em escolas. Para combatermos isso, pensamos em criar uma plataforma para que os alunos pudessem
+      enviar denuncias sobre essas situações à direção, mantendo sempre o anonimato como uma possível escolha do aluno.<br><br>
       
       A ideia é que possamos passar os incidentes diretamente para as mãos dos responsávels; direção, coordenação,
       professores e etc., assim, eles podem tomar as providências sem que os demais alunos tenham ciência de quem fez a denúncia.
     </p><br><br>
 
-    <h1>Como relatar um caso?</h1>
+    <h1>Como fazer uma denúncia?</h1>
     <p>É um processo simples. Você pode usar o nosso serviço principal ao clicar na aba "Relatar", na barra superior do site. 
       Nessa aba, você terá acesso a um pequeno formulário para informar o ocorrido.
-      Após preencher o formulário, clique em "Enviar" e sua mensagem será enviada diretamente para a direção da escola.
+      Após preencher o formulário, clique em "Enviar" e sua mensagem será enviada diretamente para os responsáveis da escola.
     </p>
   </section>
 
   <section id="report">
-    <h1>Relate um caso</h1>
+    <h1>Faça uma denúncia</h1>
     <p>Aqui você pode enviar um relato à direção sem revelar sua identidade.
       Preencha o formulário abaixo com os dados solicitados.
     </p>
@@ -212,7 +228,7 @@
         <input type="submit" value="Enviar">
       </div>
     </form>
-    <div class="success-message" id="successRepMessage">Relatório enviado com sucesso!</div>
+    <div class="success-message" id="successRepMessage">Denúncia enviado com sucesso!</div>
   </section>
 
   <section id="contato">
