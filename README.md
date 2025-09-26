@@ -1,23 +1,19 @@
 # Voz do Aluno (Site)
 
 O Voz do Aluno é um serviço gratuito e anônimo para estudantes da escola PEI E.E. Professora Irene Branco da Silva
-que desejem relatar casos de bullying diretamente à diretoria.
+que desejem fazer denúncias diretamente à diretoria.
 
-
-## Recursos
-
+### Recursos
 - Formulário de relato;
 - Formulário de contato;
 - Banco de dados em MongoDB.
 
 
-## Como usar
-
+### Como usar
 1. Entrar no site.
 2. Clicar na aba desejada ('Relatar' ou 'Contato').
 3. Preencher, no mínimo, os campos obrigatórios do respectivo formulário.
 4. Enviar.
-
 
 
 
