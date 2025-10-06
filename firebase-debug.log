@@ -1,0 +1,21 @@
+[debug] [2025-10-06T16:37:33.373Z] ----------------------------------------------------------------------
+[debug] [2025-10-06T16:37:33.379Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\byaku\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-10-06T16:37:33.380Z] CLI Version:   14.18.0
+[debug] [2025-10-06T16:37:33.380Z] Platform:      win32
+[debug] [2025-10-06T16:37:33.380Z] Node Version:  v22.19.0
+[debug] [2025-10-06T16:37:33.382Z] Time:          Mon Oct 06 2025 09:37:33 GMT-0700 (Pacific Daylight Time)
+[debug] [2025-10-06T16:37:33.382Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-10-06T16:37:33.392Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-10-06T16:37:33.394Z] > authorizing via signed-in user (sovietlolirce@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\byaku\Desktop\Projects\voz-do-aluno
+
