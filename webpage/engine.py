@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, jsonify, request, render_template
 import firebase_admin
 from firebase_admin import credentials, firestore
 import datetime
@@ -6,6 +6,14 @@ import datetime
 cred = credentials.Certificate("firebase_config.json")
 firebase_admin.initialize_app(cred)
 db = firestore.client()
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('/webpage/index.html')
+if __name__ == '__main__':
+    app.run()
 
 @app.route('/enviar-denuncia', methods=['POST'])
 def enviar_denuncia():
@@ -27,10 +35,3 @@ def enviar_denuncia():
     })
 
     return jsonify({"success": True, "id": doc_ref[1].id})
-
-app = Flask(__name__)
-@app.route('/')
-def index():
-    return render_template('/webpage/index.html')
-if __name__ == '__main__':
-    app.run()
