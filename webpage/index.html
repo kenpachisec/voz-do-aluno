@@ -7,7 +7,7 @@
   <title>Voz do Aluno</title>
   <style>
     body {
-      margin: 0;
+      margin: 0%;
       font-family: Arial, sans-serif;
       background-color: #0f0f0f;
       color: #ffffff;
@@ -18,61 +18,65 @@
       display: flex;
       background-color: #1c1c1c;
       justify-content: space-between;
-      padding-left: 15px;
-      padding-right: 15px;
+      padding-left: 0%;
+      padding-right: 0%;
     }
 
     #logo-text{
-        padding-top: 3px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 19.5px;
-        font-weight: 900;
+        padding-top: 1.65%;
+        font-family: Helvetica;
+        font-size: 115%;
+        font-weight: bolder;
         color: #dfa8f8;
     }
     
     #logo{
-      padding-right: 10px;
-      padding-top: 5px;
-      width: 68px;
-      height: 65px;
+      padding-right: 0.5%;
+      padding-top: 0.6%;
+      width: 12%;
+      height: 95%;
     }
 
     #logo-div{
       display:flex;
-      padding-left: 18px;
+      padding-left: 1%;
     }
 
     nav {
       background-color: #1c1c1c;
       display: flex;
       justify-content: center;
-      padding: 18px 0;
+      padding: 1% 4%;
       position: relative;
       z-index: 2;
     }
 
     nav a {
       color: #982CCB;
-      text-decoration: none;
-      margin: 0 20px;
+      text-decoration:none;
+      margin: 0% 3%;
       font-weight: bold;
-      padding: 6px 12px;
-      border-radius: 5px;
+      padding: 8% 7%;
+      border-radius: 25%;
     }
 
-    nav a:hover,
+    nav a:hover{
+      background-color:#2c2c2c;
+      color: #b9b9b9;
+    }
     nav a.active {
-      background-color: #2c2c2c;
+      background-color: #383737;
+      color: #b9b9b9;
     }
 
     section {
       display: none;
-      max-width: 800px;
-      margin: 150px auto;
+      max-width: 70%;
+      margin: 10% auto;
       background-color: #222222;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(227, 255, 246, 0.1);
+      padding: 1%;
+      border-radius: 2%;
+      box-shadow: 0 0 20px rgba(227, 255, 246, 0.1);
       position: relative;
       z-index: 2;
     }
@@ -82,29 +86,30 @@
     }
  
     h1{
-      font-size: 38px;
-      line-height: 0.4;
+      font-size: 240%;
+      line-height: 100%;
     }
 
     p {
-      font-size: 18px;
-      line-height: 1.5;
+      font-size: 130%;
+      line-height: 120%;
     }
 
     .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 2%;
     }
 
     .form-group label {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 1.1%;
       font-weight: bold;
+      font-size:125%;
     }
 
     .form-group input,
     .form-group textarea {
       width: 98.1%;
-      padding: 8px;
+      padding: 0.5%;
       background-color: #2c2c2c;
       border: 1px solid #555;
       border-radius: 5px;
@@ -217,7 +222,7 @@
     <form id="formReport">
       <div class="form-group">
         <label for="report-ocorrido">Explique o ocorrido, se possível com detalhes:</label>
-        <textarea id="report-ocorrido" name="report-ocorrido" rows="8" required></textarea>
+        <textarea id="report-ocorrido" name="report-ocorrido" rows="8" required oninvalid="this.setCustomValidity('Insira sua denúncia aqui.')" oninput="this.setCustomValidity('')"></textarea>
       </div>
 
       <div class="form-group">
@@ -248,15 +253,21 @@
     <form id="formContato">
       <div class="form-group">
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome" required
+        oninvalid="this.setCustomValidity('Insira seu nome.')"
+        oninput="this.setCustomValidity('')">
       </div>
       <div class="form-group">
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required
+        oninvalid="this.setCustomValidity('Insira um e-mail válido.')"
+        oninput="this.setCustomValidity(''); this.checkValidity()">
       </div>
       <div class="form-group">
         <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        <textarea id="mensagem" name="mensagem" rows="4" required 
+        oninvalid="this.setCustomValidity('Por favor, insira sua mensagem.')"
+        oninput="this.setCustomValidity('')"></textarea>
       </div>
       <div class="form-group">
         <input type="submit" value="Enviar">
@@ -268,7 +279,7 @@
   <script>
     const buttons = document.querySelectorAll('.tab-button');
     const sections = document.querySelectorAll('section');
-
+    
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         buttons.forEach(btn => btn.classList.remove('active'));
@@ -284,11 +295,6 @@
       const nome = document.getElementById('nome');
       const email = document.getElementById('email');
       const mensagem = document.getElementById('mensagem');
-
-      if (nome.value.trim() === "" || email.value.trim() === "" || mensagem.value.trim() === "") {
-        alert("Por favor, preencha todos os campos.");
-        return;
-      }
 
       document.getElementById('successMessage').style.display = 'block';
       cont_form.reset();
@@ -306,11 +312,6 @@
       const report = document.getElementById('report-ocorrido');
       const repSerie = document.getElementById('report-série')
 
-      if (report.value.trim() === "") {
-        alert("Por favor, preencha o campo obrigatório.");
-        return;
-      }
-
       document.getElementById('successRepMessage').style.display = 'block';
       report_form.reset();
 
@@ -318,8 +319,6 @@
         document.getElementById('successRepMessage').style.display = 'none';
       }, 3000);
     });
-
   </script>
-  <script src="report.js"></script>
 </body>
 </html>
