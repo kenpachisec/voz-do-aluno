@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/x-icon" href="/images/logo-colored.png">
+  <link rel="icon" type="image/x-icon" href="static/images/logo-colored.png">
   <title>Voz do Aluno</title>
   <style>
     body {
@@ -170,7 +170,7 @@
 <body>
   <header>
     <div id="logo-div">
-      <img src="/images/logo-colored.png" alt="Logo do projeto" id="logo">
+      <img src="static/images/logo-colored.png" alt="Logo do projeto" id="logo">
       <p id="logo-text">Voz do Aluno</p>
     </div>
 
@@ -214,7 +214,7 @@
     <p>Aqui você pode enviar um relato à direção sem revelar sua identidade.
       Preencha o formulário abaixo com os dados solicitados.
     </p>
-    <form id="formReport">
+    <form id="formReport" action="/enviar_denuncia" method="post">
       <div class="form-group">
         <label for="report-ocorrido">Explique o ocorrido, se possível com detalhes:</label>
         <textarea id="report-ocorrido" name="report-ocorrido" rows="8" required oninvalid="this.setCustomValidity('Insira sua denúncia aqui.')" oninput="this.setCustomValidity('')"></textarea>
@@ -231,15 +231,15 @@
       </div>
 
       <div class="form-group">
-        <label for="report-série">(Opcional) Série/Sala:</label>
-        <input type="text" id="report-série" name="report-série" placeholder="Caso realmente queira se identificar, preencha este campo com sua série e sala.">
+        <label for="report-serie">(Opcional) Série/Sala:</label>
+        <input type="text" id="report-serie" name="report-serie" placeholder="Caso realmente queira se identificar, preencha este campo com sua série e sala.">
       </div>
 
       <div class="form-group">
         <input type="submit" value="Enviar">
       </div>
     </form>
-    <div class="success-message" id="successRepMessage">Denúncia enviado com sucesso!</div>
+    <div class="success-message" id="successRepMessage">Denúncia enviada com sucesso!<div>
   </section>
   
   <section id="Sobre">
@@ -263,7 +263,7 @@
   <section id="contato">
     <h1>Quer tirar dúvidas? Fale Conosco!</h1>
     <br>
-    <form id="formContato">
+    <form method="post" action="/enviar_contato" id="formContato">
       <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required
@@ -287,6 +287,11 @@
       </div>
     </form>
     <div class="success-message" id="successMessage">Mensagem enviada com sucesso!</div>
+
+    <form id="TESTE" method="post" action"/TESTE">
+
+
+    </form>
   </section>
 
 
@@ -305,7 +310,7 @@
 
     const cont_form = document.getElementById('formContato');
     cont_form.addEventListener('submit', function (event) {
-      event.preventDefault();
+//      event.preventDefault();
       const nome = document.getElementById('nome');
       const email = document.getElementById('email');
       const mensagem = document.getElementById('mensagem');
@@ -320,7 +325,7 @@
 
     const report_form = document.getElementById('formReport')
     report_form.addEventListener('submit', function (event) {
-      event.preventDefault();
+//      event.preventDefault();
       const repNome = document.getElementById('report-nome');
       const repEmail = document.getElementById('report-email');
       const report = document.getElementById('report-ocorrido');
