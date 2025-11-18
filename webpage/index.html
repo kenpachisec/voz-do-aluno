@@ -15,8 +15,11 @@
     }
 
     header {
+      border-radius: 2%;
+      box-shadow: 0 0 10px #5c5c5c7b;
+      background-color: #232323;
       display: flex;
-      background-color: #1c1c1c;
+      background-color: #232323;
       justify-content: space-between;
       padding-left: 0%;
       padding-right: 0%;
@@ -43,7 +46,8 @@
     }
 
     nav {
-      background-color: #1c1c1c;
+      background-repeat: repeat;
+      background-color: #232323;
       display: flex;
       justify-content: center;
       padding: 1% 4%;
@@ -56,27 +60,28 @@
       text-decoration:none;
       margin: 0% 3%;
       font-weight: bold;
-      padding: 8% 7%;
-      border-radius: 25%;
+      padding: 8% 4%;
+      padding-top: 8%;
+      border-radius: 30%;
     }
 
     nav a:hover{
-      background-color:#2c2c2c;
-      color: #b9b9b9;
+      background-color:#383737;
+      color: #e1e1e1;
     }
     nav a.active {
       background-color: #383737;
-      color: #b9b9b9;
+      color: #e1e1e1;
     }
 
     section {
       display: none;
       max-width: 70%;
       margin: 10% auto;
-      background-color: #222222;
+      background-color: #313131;
       padding: 1%;
       border-radius: 2%;
-      box-shadow: 0 0 20px rgba(227, 255, 246, 0.1);
+      box-shadow: 0 0 20px rgba(92, 92, 92, 0.484);
       position: relative;
       z-index: 2;
     }
@@ -187,25 +192,15 @@
       <a href="#" class="tab-button active" data-tab="home">Home</a>
       <a href="#" class="tab-button" data-tab="report">Relatar</a>
       <a href="#" class="tab-button" data-tab="contato">Contato</a>
+      <a href="#" class="tab-button" data-tab="Sobre">Sobre</a>
     </nav>
 
   </header>
   <section id="home" class="active">
-    <h1>Sobre o Projeto</h1>
-    <p>
-      Desenvolvemos este projeto com o objetivo de proporcionar uma ferramenta para denunciar casos de bullying,
-      racismo, homofobia e assim por diante, promovendo a paz e respeito dentro do ambiente estudantil por
-      meio das ações da diretoria. É por meio de uma escola harmoniosa que podemos construir uma sociedade melhor.<br><br>
-
-      A princípio, tivemos dificuldades ao lidar com o tema do nosso grupo, tendo em vista que se trata de um
-      tópico um tanto vago, "Respeito". Então decidimos restringir a pauta para facilitar o brainstorming e, chegamos
-      à conclusão de que ocorrências relacionadas ao racismo, homofobia e bullying são as maiores representações da
-      falta de respeito em escolas. Para combatermos isso, pensamos em criar uma plataforma para que os alunos pudessem
-      enviar denuncias sobre essas situações à direção, mantendo sempre o anonimato como uma possível escolha do aluno.<br><br>
-      
-      A ideia é que possamos passar os incidentes diretamente para as mãos dos responsávels; direção, coordenação,
-      professores e etc., assim, eles podem tomar as providências sem que os demais alunos tenham ciência de quem fez a denúncia.
-    </p><br><br>
+    <h1>Bem-vindo(a) ao Voz do Aluno</h1>
+    <p>O Voz do Aluno é uma simples plataforma feita por estudantes para estudantes com o objetivo de tornar o espaço estudantil um pouco mais seguro por meio de um sistema de denúncias anônimas sobre todo tipo de situação pertinente à falta de respeito à direção.<br>
+      <br>Junte-se a nós na promoção do respeito mútuo e responsabilidade ao denunciar episódios de bullying, racismo e outras formas de discriminação.
+    </p><br>
 
     <h1>Como fazer uma denúncia?</h1>
     <p>É um processo simples. Você pode usar o nosso serviço principal ao clicar na aba "Relatar", na barra superior do site. 
@@ -246,6 +241,24 @@
     </form>
     <div class="success-message" id="successRepMessage">Denúncia enviado com sucesso!</div>
   </section>
+  
+  <section id="Sobre">
+    <h1>
+      Sobre o Projeto
+    </h1>
+    <p>Desenvolvemos este projeto com o objetivo de proporcionar uma ferramenta para denunciar casos de bullying,
+      racismo, homofobia e assim por diante, promovendo a paz e respeito dentro do ambiente estudantil por
+      meio das ações da diretoria. É por meio de uma escola harmoniosa que podemos construir uma sociedade melhor.<br><br>
+
+      A princípio, tivemos dificuldades ao lidar com o tema do nosso grupo, tendo em vista que se trata de um
+      tópico um tanto vago, "Respeito". Então decidimos restringir a pauta para facilitar o brainstorming e, chegamos
+      à conclusão de que ocorrências relacionadas ao racismo, homofobia e bullying são as maiores representações da
+      falta de respeito em escolas. Para combatermos isso, pensamos em criar uma plataforma para que os alunos pudessem
+      enviar denuncias sobre essas situações à direção, mantendo sempre o anonimato como uma possível escolha do aluno.<br><br>
+      
+      A ideia é que possamos passar os incidentes diretamente para as mãos dos responsávels; direção, coordenação,
+      professores e etc., assim, eles podem tomar as providências sem que os demais alunos tenham ciência de quem fez a denúncia.</p>
+  </section>
 
   <section id="contato">
     <h1>Quer tirar dúvidas? Fale Conosco!</h1>
@@ -275,6 +288,7 @@
     </form>
     <div class="success-message" id="successMessage">Mensagem enviada com sucesso!</div>
   </section>
+
 
   <script>
     const buttons = document.querySelectorAll('.tab-button');
