@@ -6,166 +6,204 @@
   <link rel="icon" type="image/x-icon" href="static/images/logo-colored.png">
   <title>Voz do Aluno</title>
   <style>
-    body {
-      margin: 0%;
-      font-family: Arial, sans-serif;
-      background-color: #0f0f0f;
-      color: #ffffff;
-      overflow: hidden;
-    }
+      *,
+  *::before,
+  *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+  }
 
-    header {
-      border-radius: 2%;
-      box-shadow: 0 0 10px #5c5c5c7b;
-      background-color: #232323;
-      display: flex;
-      background-color: #232323;
-      justify-content: space-between;
-      padding-left: 0%;
-      padding-right: 0%;
-    }
+  header {
+    background: #232323;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  }
 
-    #logo-text{
-        padding-top: 1.65%;
-        font-family: Arial;
-        font-size: 123%;
-        font-weight: bolder;
-        color: #dfa8f8;
-    }
-    
-    #logo{
-      padding-right: 0.5%;
-      padding-top: 0.6%;
-      width: 12%;
-      height: 95%;
-    }
+  #logo-div {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
 
-    #logo-div{
-      display:flex;
-      padding-left: 1%;
-    }
+  #logo {
+    padding-top: 18px;
+    height: 75px;
+    width: 60px;
+  }
 
-    nav {
-      background-repeat: repeat;
-      background-color: #232323;
-      display: flex;
-      justify-content: center;
-      padding: 1% 4%;
-      position: relative;
-      z-index: 2;
-    }
+  #logo-text {
+    padding-top: 0.6%;
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    font-weight: bolder;
+    color: #dfa8f8;
+    margin: 0;
+  }
 
-    nav a {
-      color: #982CCB;
-      text-decoration:none;
-      margin: 0% 3%;
-      font-weight: bold;
-      padding: 8% 4%;
-      padding-top: 8%;
-      border-radius: 30%;
-    }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.01rem 1.2rem;
+    background: #232323;
+  }
 
-    nav a:hover{
-      background-color:#383737;
-      color: #e1e1e1;
-    }
-    nav a.active {
-      background-color: #383737;
-      color: #e1e1e1;
-    }
+  nav a {
+    color: #982CCB;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    transition: all 0.3s;
+  }
 
-    section {
-      display: none;
-      max-width: 70%;
-      margin: 10% auto;
-      background-color: #313131;
-      padding: 1%;
-      border-radius: 2%;
-      box-shadow: 0 0 20px rgba(92, 92, 92, 0.484);
-      position: relative;
-      z-index: 2;
-    }
+  nav a:hover,
+  nav a.active {
+    background: #383737;
+    color: #e1e1e1;
+  }
 
-    section.active {
-      display: block;
-    }
- 
-    h1{
-      font-size: 240%;
-      line-height: 100%;
-    }
+  main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
 
-    p {
-      font-size: 130%;
-      line-height: 120%;
-    }
+  section {
+    display: none;
+    background: #313131;
+    padding: clamp(1.5rem, 5vw, 3rem);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(92, 92, 92, 0.4);
+  }
 
-    .form-group {
-      margin-bottom: 2%;
-    }
+  section.active { display: block; }
 
-    .form-group label {
-      display: block;
-      margin-bottom: 1.1%;
-      font-weight: bold;
-      font-size:125%;
-    }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    margin-top: 0;
+    color: #dfa8f8;
+  }
 
-    .form-group input,
-    .form-group textarea {
-      width: 98.1%;
-      padding: 0.5%;
-      background-color: #3f3f3f;
-      border: 1px solid #555;
-      border-radius: 5px;
-      color: rgb(255, 255, 255);
-      resize: none;
-    }
+  p {
+    font-size: clamp(1.05rem, 3.5vw, 1.3rem);
+    line-height: 1.6;
+  }
 
-    .form-group input[type="submit"] {
-      background-color: rgb(61, 61, 61);
-      color: #ffffff;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    
-    .form-group input[type="submit"]:hover {
-      background-color: #313131;
-      color: #ae24e9;
-    }
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
 
-    .success-message {
-      margin-top: 15px;
-      color: #86ff9e;
-      font-weight: bold;
-      display: none;
-    }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 1.15rem;
+  }
 
-    .particle {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      animation: float 10s linear infinite;
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.9rem;
+    background: #3f3f3f;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  .form-group textarea { resize: vertical; }
+
+  .form-group input[type="submit"] {
+    background: #4d4d4d;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .form-group input[type="submit"]:hover {
+    background: #313131;
+    color: #ae24e9;
+  }
+
+  .success-message {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(134, 255, 158, 0.2);
+    border: 1px solid #86ff9e;
+    color: #86ff9e;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+  }
+
+
+  .particle {
+    position: fixed !important;   
+    bottom: -10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #8146eb;
+    animation: float 10s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0, 0);
       opacity: 0.6;
-      z-index: 0;
     }
+    100% {
+      transform: translateY(-100vh) scale(0.8);
+      opacity: 0;
+    }
+  }
 
-    @keyframes float {
-      0% {
-        transform: translateY(0) scale(1);
-        opacity: 0.6;
-      }
-      50% {
-        transform: translateY(-300px) scale(1.2);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-600px) scale(0.8);
-        opacity: 0;
-      }
-    }
+  @media (max-width: 560px) {
+    header { flex-direction: column; text-align: center; }
+    #logo-div { justify-content: center; margin-bottom: 0.5rem; }
+    nav { padding: 0.5rem 0; }
+    nav a { padding: 0.5rem 1rem; }
+    main { padding: 0 1rem; margin: 1rem auto; }
+  }
   </style>
+</head>
+<body>
+  <header>
+    <div id="logo-div">
+      <img src="img/logo-colored.png" alt="Logo do projeto" id="logo">
+      <p id="logo-text">Voz do Aluno</p>
+    </div>
+
+    <script>
+      const colors = ['#8146eb', '#6930cf', '#a166eb'];
+      for (let i = 0; i < 70; i++) {
+        const p = document.createElement('div');
+        p.classList.add('particle');
+        p.style.left = `${Math.random() * 100}vw`;
+        p.style.background = colors[Math.floor(Math.random() * colors.length)];
+        p.style.animationDuration = `${8 + Math.random() * 8}s`;
+        p.style.animationDelay = `${Math.random() * 6}s`;
+        document.body.appendChild(p);
+}
+</script>
 </head>
 <body>
   <header>
@@ -310,7 +348,7 @@
 
     const cont_form = document.getElementById('formContato');
     cont_form.addEventListener('submit', function (event) {
-//      event.preventDefault();
+      event.preventDefault();
       const nome = document.getElementById('nome');
       const email = document.getElementById('email');
       const mensagem = document.getElementById('mensagem');
@@ -325,7 +363,7 @@
 
     const report_form = document.getElementById('formReport')
     report_form.addEventListener('submit', function (event) {
-//      event.preventDefault();
+      event.preventDefault();
       const repNome = document.getElementById('report-nome');
       const repEmail = document.getElementById('report-email');
       const report = document.getElementById('report-ocorrido');
