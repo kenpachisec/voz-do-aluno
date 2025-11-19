@@ -3,6 +3,8 @@
 O Voz do Aluno é um serviço gratuito e anônimo para estudantes da escola PEI E.E. Professora Irene Branco da Silva
 que desejem fazer denúncias diretamente à diretoria.
 
+Clique <a href="https://vozdoaluno.web.app">aqui</a> para ser redirecionado.
+
 ### Recursos
 - Formulário de relato;
 - Formulário de contato;
